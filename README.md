@@ -1,40 +1,74 @@
 # Healthcare Operational Intelligence
 
-Predicting 30 day hospital readmission risk using machine learning on structured EHR style data.  
-Model objective: identify higher risk patients for early intervention.
+## Project Overview
+
+This project builds an end-to-end predictive analytics system to estimate 30-day hospital readmission risk and simulate operational cost trade-offs for healthcare decision-making.
+
+The objective is not only to build a predictive model, but to evaluate its financial and operational deployment impact.
+
+---
+
+## Business Problem
+
+Hospital readmissions within 30 days increase operational costs, strain clinical resources, and reduce quality-of-care metrics.
+
+The goal is to:
+
+- Predict high-risk patients at discharge
+- Optimize intervention strategy using threshold tuning
+- Quantify financial trade-offs between recall and precision
+
+---
 
 ## Dataset
-- Diabetes 130 US hospitals dataset (101,766 encounters)
-- Target: readmitted within 30 days (1) vs not within 30 days (0)
 
-## Approach
-- Cleaned data and created binary target (`<30` vs others)
-- One hot encoded categorical variables
-- Train test split: 80 20
-- Baselines: Logistic Regression, Random Forest, Gradient Boosting
-- Final model: XGBoost with small grid search and threshold tuning
+- 100,000+ patient encounters
+- Clinical features (diagnoses, discharge disposition, inpatient history)
+- Readmission target variable (binary classification)
 
-## Results (Test Set)
-- ROC AUC: ~0.68
-- Example operating point (threshold tuned for F1): improves recall but reduces precision
-- Business trade off: higher threshold increases precision (fewer false alarms) but misses more true readmissions
+---
 
-## Top Drivers (Model Features)
-Common high impact factors included:
-- number_inpatient
-- discharge_disposition_id
-- diagnosis codes (diag_1, diag_2, diag_3)
+## Modeling Approach
+
+Models Evaluated:
+- Logistic Regression
+- Gradient Boosting
+- XGBoost (final selected model)
+
+Final Model:
+- ROC AUC: **0.682**
+- Optimized decision threshold: **0.20**
+
+---
+
+## Performance Trade-Off
+
+Lower threshold:
+- Higher recall
+- More patients flagged
+- Higher intervention cost
+
+Higher threshold:
+- Higher precision
+- Fewer false positives
+- Risk of missed readmissions
+
+---
+
+## Business Impact Simulation
+
+Using cost assumptions:
+
+- Cost of readmission: $15,000
+- Cost of preventive intervention: $1,500
+
+The model enables threshold-based financial strategy optimization.
+
+---
 
 ## Repository Structure
-- `notebooks/` : data cleaning and model development notebooks
 
-## How to Run
-1. Install requirements
-2. Open the notebook in `notebooks/`
-3. Run cells top to bottom
 
-## Notes
-This is a learning project and not a clinical decision tool. Performance is moderate and should be improved with better feature engineering and calibration.
 
 
 Specific diagnosis codes
