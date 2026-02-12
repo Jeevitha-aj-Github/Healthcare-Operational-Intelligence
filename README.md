@@ -1,7 +1,3 @@
-Good. I’ll give you a clean, final, ready-to-paste version. No fluff. Professional. Structured.
-
-Copy this exactly.
-
 Healthcare Operational Intelligence
 
 Predicting 30-Day Hospital Readmission & Simulating Business Impact
