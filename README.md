@@ -7,6 +7,8 @@ Predicting 30-Day Hospital Readmission & Simulating Business Impact
 
 This project predicts 30-day hospital readmission risk and quantifies the financial impact of preventive intervention strategies.
 
+This project demonstrates how machine learning can be integrated into hospital decision workflows to reduce readmission penalties and optimize intervention spending.
+
 The objective is not just model accuracy, but operational decision support.
 
 ---
@@ -88,7 +90,7 @@ At a 0.20 risk threshold:
 - Readmissions Prevented: 528  
 - Intervention Cost Assumed: ₹5,000 per flagged patient  
 - Readmission Cost Assumed: ₹50,000 per case  
-- Estimated Net Savings: ₹17.13 Million
+- Estimated Net Savings: ₹17.13 Million  
 
 This demonstrates how predictive modeling directly translates into measurable financial savings.
 
@@ -122,4 +124,5 @@ README.md
 - Threshold optimization  
 - Business-aligned evaluation  
 - Financial impact simulation  
+
 
